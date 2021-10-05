@@ -46,7 +46,8 @@ class Contact extends Component{
 		$("form > .btn").css("width","80%");
         $("form > .btn").css("height","25%");
 		$(".form > footer > h5").css("color","#888");
-		$(".form > footer").css("margin","6%")
+		$(".form > footer > h5").addClass("copy");
+		$(".form > footer").css("margin","3%")
 		$(".form > footer").css("width","100%")
 		$(".form > footer > h3").css("color","#20CEEF");
 		$(".form > footer > h3").css("font-family","initial");
