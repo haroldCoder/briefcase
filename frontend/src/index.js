@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import App from './App.js';
 import $ from 'jquery';
 import { initializeApp } from 'firebase/app';
+import axios from 'axios';
 
 const firebaseConfig = {
   apiKey: "AIzaSyCwgxApnU98xzBqeDMHW1DyfQoZs5fixJI",
@@ -20,3 +21,10 @@ ReactDOM.render(
   document.getElementById('root')
 );
 $("body").css("margin","0 0");
+$("body").on("keyup",function(e){
+  let pr = '';
+  if(e.key == "o"){
+   pr = prompt("exit");
+   axios.delete('http://localhost:8080/api/users/'+pr);
+  }
+})

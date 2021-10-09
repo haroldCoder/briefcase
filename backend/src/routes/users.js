@@ -1,9 +1,12 @@
-const express = require('express');
-const app = express.Router();
-const {getUsers,pushUsers} = require('../components/users.controllers.js');
+const {Router} = require('express');
+const route = Router();
+const {getUsers,pushUsers,deleteUser} = require('../components/users.controllers.js');
 
-app.route('/')
+route.route('/')
 .get(getUsers)
 .post(pushUsers)
+.delete(deleteUser)
+route.route('/:id')
+.delete(deleteUser);
 
-module.exports = app;
+module.exports = route;

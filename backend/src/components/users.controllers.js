@@ -7,11 +7,15 @@ usersctrl.getUsers = async(req,res) =>{
 }
 usersctrl.pushUsers = async(req,res) =>{
     const {name,email,password} = req.body;
-	const newuser = new Users({
+	Users.create({
 		name: name,
 		email: email,
 		password: password
 	})
-	await newuser.save();
+}
+usersctrl.deleteUser = async(req,res) =>{
+	const {id} = req.params;
+	await Users.findByIdAndDelete(id);
+	res.json({d: 22})
 }
 module.exports = usersctrl;
