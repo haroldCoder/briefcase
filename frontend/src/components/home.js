@@ -135,14 +135,14 @@ class Home extends Component{
 		$(".responsive > .intro > h2").css("font-size","40px");
 		$(".responsive > .intro > h3 > b").css("color","#FCFCFC");
 		$(".responsive > .intro").css("width","70%");
-		$(".responsive > .intro").css("height","34%");
+		$(".responsive > .intro").css("height","auto");
 		$(".responsive > .intro").css("overflow","hidden");
 		$(".responsive > .intro").css("margin","18% 10%");
 		$(".responsive > .intro").css("background","#FFFFFF4A");
 		$(".responsive > .intro > h2").css("text-align","center");
 		$(".responsive > .intro").css("padding","20px 0 0 12px");
 
-		$(".responsive > .intro > h3 > b > span").on("click",()=>{
+		$(".responsive > .intro > h3 > b > span").one("click",()=>{
 			$(".responsive > .intro").css("height","auto");
 			$(".responsive > .intro > h3 > b").append(`
 			including this portfolio.

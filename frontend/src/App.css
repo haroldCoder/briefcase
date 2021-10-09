@@ -27,7 +27,7 @@
 }
 .home{
 	margin-top: 2%;
-	margin-left: 2%;
+	margin-left: 0%;
 	width: 100%;
 }
 .home > .info{
@@ -36,6 +36,7 @@
 	background-color: #EEEEEE0F;
 	backdrop-filter: blur(6px);
 	padding-top: 5px;
+	margin-left: 1%;
 }
 .info > .block{
 	width: 50%;
@@ -77,4 +78,30 @@
 .responsive > .col-md-4 > #word{
 	font-family: 'Staatliches', cursive;
 	font-size: 60px;
+}
+.panel > .input{
+	width: 40%;
+	height: 85%;
+	background: #00000048;
+	backdrop-filter: blur(6px);
+	position: absolute;
+	top: 20%;
+	left: 30%;
+}
+.inp{
+	background: transparent !important;
+	outline: none !important;
+	color: #FFF !important;
+}
+.inp:focus{
+	background: #FFFFFF40 !important;
+}
+#log:hover{
+	background: #1212ff;
+	color: #FFF;
+	padding: 6px 6px 6px 6px;
+	border-radius: 10px;
+}
+.copy{
+	margin-left: 4% !important;
 }
