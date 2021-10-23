@@ -24,28 +24,34 @@ class Home extends Component{
 	    }	
 	}
 	state = {
-		name: "",
-		lastname: "",
-		cel: "",
-		reside: "",
-		exp: "",
+		name: "Harold",
+		lastname: "Castaño Alvarez",
+		cel: "+573006497804",
+		reside: "Colombia",
+		exp: "4 years",
 		word: "koder"
 	}
 	componentDidMount(){
-		this.getKode();
-	}	
+		this.Style();
+		this.Count()
+		this.getCode()
+	}
 	componentDidUpdate(){
 		if(2 == 2)
 		  this.Count()
+		  this.Style()
 	}
-	getKode = async() =>{
-		const res = await axios('http://localhost:8080/api/koder');
-		this.setState({name: res.data[0].name,
-			lastname: res.data[0].lastname,
+	getCode = async() =>{
+		const res = await axios.get('http://localhost:8080/api/koder');
+		this.setState({
+			name: res.data[0].name,
+			email: res.data[0].email,
 			cel: res.data[0].cel,
+			exp: res.data[0].exp,
+			word: res.data[0].word,
 			reside: res.data[0].reside,
-			exp: res.data[0].exp
-	    })
+			lastname: res.data[0].lastname
+		});
 	}
 	render(){
 		return(
@@ -100,7 +106,7 @@ class Home extends Component{
 			   </div>
 		);
 	}
-	componentWillUpdate(){
+	Style = () =>{
 		$(".home").css("height","100%");
 		$(".info2").css("margin-top","1%");
 		$(".info2").css("margin-left","1%");

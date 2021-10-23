@@ -1,4 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
+:root{
+  --bs-black: rgb(153, 153, 153);
+}
 #root{
 	background-color: #131313;
 	height: auto;
@@ -81,7 +84,7 @@
 }
 .panel > .input{
 	width: 40%;
-	height: 85%;
+	height: auto;
 	background: #00000048;
 	backdrop-filter: blur(6px);
 	position: absolute;
@@ -101,4 +104,19 @@
 	color: #FFF;
 	padding: 6px 6px 6px 6px;
 	border-radius: 10px;
+}
+#koder{
+	width: 34%;
+	height: 30vh;
+	border-radius: 20px;
+	border: 3px solid #0dbCfd;
+}
+.dark{
+	color: #8a8a8a;
+	border-bottom: 3px solid #00eeff;
+	font-family: fantasy;
+	padding: 5px 1.5%;
+}
+.pad{
+	padding: 0 0 !important;
 }

@@ -1,8 +1,45 @@
 import { Component } from "react";
-import ReactDOM from "react-dom";
+import ReactDOM, { render } from "react-dom";
 import $ from "jquery";
 import Forms from "./forms";
-
+import react from '../img/react.png';
+import angular from '../img/angular.png';
+import mongo from '../img/mongodb.png';
+class Intro extends Component{
+	render(){
+		return(
+			<div className="inel">
+				<section className="title">
+					<h1>INTRO</h1>
+				</section>
+				<section className="intro">
+					<h5>you want to belong to coderx developers great, if you know
+						 how to handle html or php javascript and css you can be part
+						  of our community of developers</h5>
+					<div className="container">
+						<div className="box frame">
+							<h2>main frameworks</h2>
+							<section className="d-flex">
+								<img src={react} alt="react" className="imgi"/>
+								<img src={angular} alt="angular" className="imgi"/>
+							</section>
+						</div>
+						<div className="box data">
+							<h2>main database</h2>
+							<section className="d-flex">
+								<img src={mongo} alt="mongodb" className="imgi"/>
+							</section>
+						</div>
+					</div>
+					<div className="buttons d-flex">
+						<button className="btn btn-primary" id="accept">Accept</button>
+						<button className="btn btn-primary" id="cancel">Cancel</button>
+					</div>
+				</section>
+			</div>
+		);	
+		}
+}
 class Contact extends Component{
 	UI = () =>{
 		ReactDOM.render(
@@ -12,11 +49,35 @@ class Contact extends Component{
 					<h3 className="close">X</h3>
 				</div>
 				<div className="draw">
-					<Forms/>
+					<Intro/>
 				</div>
 			</section>,
 			document.querySelector('.input')
 		)
+		$(".inel").css("width","100%")
+		$(".inel > .title > h1").css("width","100%");
+        $(".inel > .title > h1").css("height","8%");
+		$(".inel > .title").css("background","#CCCCCC35");
+		$(".inel > .title > h1").css("font-family","fantasy");
+		$(".inel > .title > h1").css("position","relative");
+		$(".inel > .title > h1").css("left","37%");
+		$(".inel > .title > h1").css("color","#FFFFFFA9");
+		$(".inel > .intro > h5").css("margin","3% 4%");
+		$(".inel > .intro > h5").css("font-family","Staatliches");
+		$(".inel > .intro > h5").css("color","#000");
+		$(".inel > .intro > h5").css("font-size","29px");
+		$(".box > h2").css("background","#00000075");
+		$(".box > h2").css("color","#30CDFF");
+		$(".box > h2").css("margin","3% 0");
+		$(".box").css("margin","4% 0");
+		$(".intro > .container > .data").css("width","100%")
+		$(".imgi").css("margin","0 4%");
+		$(".imgi").css("width","25vh");
+		$(".imgi").css("height","25vh");
+		$(".box > .d-flex").css("justify-content","center");
+		$(".buttons").css("width","100%");
+		$(".buttons").css("justify-content","center");
+		$(".buttons > .btn").css("margin","4% 4%");
 		$("#title").css("color","#00ff95");
 		$(".input > .panel > .title > h3").css("color","#EF4040");
 		$(".input > .panel > .title > h3").css("font-size","40px");
@@ -29,39 +90,21 @@ class Contact extends Component{
         $(".close").on("click",()=>{
 			$(".input").remove();
 		});
-        $(".form > form > input").css("border","none");
-		$(".form > form > input").css("border-bottom","2px solid #00FFAF");
-		$(".form > form > input").css("background","none");
-		$(".form > form > input").css("width","100%");
-		$(".form > form > input").css("box-shadow","0px 2px 0px 0px #00e8ff");
-		$(".form > form > input").css("margin-bottom","8.5%");
-		$(".form > form > h2").css("color","rgb(111 248 255)");
-	    $(".form > form > h2").css("font-family","emoji");
-		$(".form > h1").css("text-align","center");
-		$(".form > h1").css("font-family","fantasy");
-		$(".form > h1").css("color","#FFEEFF");
-		$(".form > h1").css("margin","10px 0");
-		$(".form").css("padding","0 7% 0 7%");
-		$("form > .btn").css("margin","0 10%");
-		$("form > .btn").css("width","80%");
-        $("form > .btn").css("height","25%");
-		$(".form > footer > h5").css("color","#888");
-		$(".form > footer").css("margin","6%")
-		$(".form > footer").css("width","100%")
-		$(".form > footer > h3").css("color","#20CEEF");
-		$(".form > footer > h3").css("font-family","initial");
-		$(".form > footer > h3").css("cursor","pointer");
-		$(".form > footer > h3").css("margin","0 20%");
-		$(".form > footer > h3").css("margin-right","0");
-		$(".form > form > button").eq(1).css("width","80%")
-		$(".form > form > button").eq(1).css("margin","1% 10%")
-		$(".form > form > button").eq(1).css("justify-content","center");
+		$("#accept").on("click",()=>{
+			ReactDOM.render(
+				<Forms/>,
+				document.querySelector('.draw')
+			);
+		})
+		$("#cancel").on("click",()=>{
+			$(".input").remove();
+		})
 	}
 	Update = () =>{
 		$(".panel").append(`
 		 <div class="input"></div>
 		`);	
-		this.UI();	
+	 this.UI();
 	}
 }
-export default Contact;
+export {Contact};
