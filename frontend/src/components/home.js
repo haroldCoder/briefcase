@@ -58,35 +58,35 @@ class Home extends Component{
                <div className="home"> 
 				   <section className="info d-flex">
 					 <div className="block">
-                     <div className="present d-flex">
-						 <div className="img">
+                     <div className="present d-flex card bg-dark" style={{flexFlow: "row"}}>
+						 <div className="img card bg-white">
 							 <img src={coder} id="coder"/>
 						 </div>
 						 <div className="data container">
 							 <div className="column">
-								 <h4>Name: {this.state.name}</h4>
-								 <h4>Last name: {this.state.lastname}</h4>
-								 <h4>Cel: {this.state.cel}</h4>
-								 <h4>Recides: {this.state.reside}</h4>
-								 <h4>Experience: {this.state.exp}</h4>
+								 <h4 className="card-text text-white">Name: {this.state.name}</h4>
+								 <h4 className="card-text text-white">Last name: {this.state.lastname}</h4>
+								 <h4 className="card-text text-white">Cel: {this.state.cel}</h4>
+								 <h4 className="card-text text-white">Recides: {this.state.reside}</h4>
+								 <h4 className="card-text text-white">Experience: {this.state.exp}</h4>
 							 </div>
 						 </div>
 					 </div>
-					 <div className="present info2">
-						 <h1>Coderx developers</h1>
-						 <div className="intro2">
+					 <div className="present info2 card bg-secondary">
+						 <h1 className="card-title text-white">Coderx developers.</h1>
+						 <div className="intro2 card bg-secondary p-3">
 							 <h2>What is coderx developers?</h2>
-							 <h3>coderx developers is a group of developers who have skills such as web machine learning and desktop development what this group does is the function
-								 of creating applications and programs in the skills mentioned for the satisfaction and need of the client.</h3>
+							 <h5 className="card-text text-dark h4">coderx developers is a group of developers who have skills such as web machine learning and desktop development what this group does is the function
+								 of creating applications and programs in the skills mentioned for the satisfaction and need of the client.</h5>
 						 </div>
 						 <div className="imgs d-flex">
 							 <img src={Koder} alt="koder" />
 							 <img src={coder2} alt="coderx" />
 					    </div>
-						<div className="intro2">
+						<div className="intro2 card bg-secondary p-3">
 							<h2>what talents does coderx developers have?</h2>
-							<h3>In this group of developers we have various knowledge, such as knowing programming <img src="https://www.extradigital.es/wp-content/uploads/2020/01/web-marketing-digital-segovia.jpg" alt="developer" id="dev"/> from the basics to the advanced, this helps us make applications and
-							    programs more algorithmic and functional, we also have extensive knowledge in development combining logic with design.</h3>
+							<h5 className="card-text text-dark h4">In this group of developers we have various knowledge, such as knowing programming <img src="https://www.extradigital.es/wp-content/uploads/2020/01/web-marketing-digital-segovia.jpg" alt="developer" id="dev"/> from the basics to the advanced, this helps us make applications and
+							    programs more algorithmic and functional, we also have extensive knowledge in development combining logic with design.</h5>
 						</div>
                     </div>
 					</div>
@@ -111,12 +111,12 @@ class Home extends Component{
 		$(".info2").css("margin-top","1%");
 		$(".info2").css("margin-left","1%");
 		$(".info2 > h1").css("text-align","center");
-		$(".info2 > h1").css("color","#40CEFF");
-		$(".intro2").css("margin","5% 1.5%");
-		$(".intro2 > h2").css("color","#30EEFF");
+		$(".info2 > h1").css("color","#EEE");
+		$(".intro2").css("margin","8.9% 1.5%");
+		$(".intro2 > h2").css("color","#EEFFEE");
 		$(".intro2 > h3").css("color","#000");
 		$(".intro2 > h2").css("font-family","'Staatliches', cursive");
-		$("#word").css("color","#08dbfd");
+		$("#word").css("color","#FFF");
 		$("#word").css("width","100%")
 		$("#word").css("text-align","center");
 		$("#word").css("padding","2% 0 0 0");
@@ -147,7 +147,6 @@ class Home extends Component{
 		$(".responsive > .intro").css("background","#FFFFFF4A");
 		$(".responsive > .intro > h2").css("text-align","center");
 		$(".responsive > .intro").css("padding","20px 0 0 12px");
-
 		$(".responsive > .intro > h3 > b > span").one("click",()=>{
 			$(".responsive > .intro").css("height","auto");
 			$(".responsive > .intro > h3 > b").append(`

@@ -7,25 +7,20 @@ import axios from "axios";
 import Forms from "./forms";
 
 class PanelP extends Component{
+	constructor(props){
+		super(props);
+		this.daten = '';
+	}
 	state ={
 		datai: [],
 	}
-     UI = async(name,email,cover,confirm) =>{
-		const res = await axios.get('https://data-base-3.herokuapp.com/estudiantes');
-		this.setState({datai: res.data});
-        let index = 0;
-		let b = 'F';
-		let id = 0;
-		for (let i = 0; i < res.data.length; i++) {
-			if(res.data[i].name == name){
-				index = i;
-				b = 'V';
-			}
-		}
-		if(b == 'V'){
-			id = res.data[index]._id;
-		}
-		alert(id)
+	getData = async() =>{
+		const res = await axios.get('https://db-coderx.herokuapp.com/users');
+		this.setState({datai:  res.data});
+		this.daten = res.data;
+	}
+     UI = (name,email,cover,confirm) =>{
+		 this.getData()
 		 $(".home").append(`
 		   <div class="panelp">
 		     <div class="container-fluid mains">
@@ -90,12 +85,11 @@ class PanelP extends Component{
 			$(".panelp").remove();
 		})
 		$(".delete").on("click",()=>{
-			axios.delete('http://data-base-3.herokuapp.com/estudiantes/'+id)
-			this.delete(cookies)
+			this.delete(cookies,name)
 		}	
 		)
 	}
-	delete = (cookies) =>{
+	delete = (cookies,name) =>{
 		$(".panelp").append(`
 		  <div class="confirm"></div>
 		`);
@@ -124,6 +118,19 @@ class PanelP extends Component{
 		$(".buttons > .btn").css("margin","0 5%");
 		$(".buttons").css("7% 0");
 		$("#acept").on("click",()=>{
+			let index = 0;
+		    let b = 'F';
+		    let id = 0;
+			for(var i = 0; i<this.daten.length; i++){
+				if(this.daten[i].name == name){
+					index = i;
+					b = 'V';
+				}
+			}
+		    if(b == 'V'){
+			   id = this.daten[index]._id;
+		    }
+			axios.delete('https://db-coderx.herokuapp.com/users/'+id)
                cookies.set("name","",{path: '/'});
 			   cookies.set("email","",{path: '/'});
 			   cookies.set("cover","",{path: '/'});

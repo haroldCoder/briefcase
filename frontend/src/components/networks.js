@@ -19,7 +19,7 @@ class Netwoks extends Component{
 				  <div className="row">
 					  <h2>Social Networks</h2>
 					  <div className="social col-md-8">
-						  <a href="https://www.facebook.com/profile.php?id=100073088183904"><img src="https://th.bing.com/th/id/R.44be1ccd70f33558088c75756c331dd3?rik=obWhSUs9OD8N6Q&riu=http%3a%2f%2fwebiconspng.com%2fwp-content%2fuploads%2f2017%2f09%2fFacebook-PNG-Image-71244.png&ehk=9AaV7CUb575XTt5lPh1owu31HZuPryRA6MWUCGCQH5Q%3d&risl=&pid=ImgRaw&r=0" alt="facebook" /></a>
+						  <a href="https://www.facebook.com/profile.php?id=100073088183904"><img src="https://freepngimg.com/download/facebook/62487-bluetie-icons-computer-facebook-login-icon-email.png" alt="facebook" /></a>
 						  <a href="https://www.instagram.com/koder_alvarez/"><img src={instagram} alt="instagram" /></a>
 						  <a href="https://mobile.twitter.com/AlvarezKoder"><img src="https://www.bluestarprogramme.ie/wp-content/uploads/2019/08/2-27646_twitter-logo-png-transparent-background-logo-twitter-png.jpg" alt="twitter" /></a>
 						  <a href="https://mail.google.com/mail/u/3/#inbox"><img src={gmail} alt="gmail" /></a>

@@ -4,30 +4,34 @@ import koder from '../img/koder2.png'
 import {Link} from 'react-router-dom';
 import $ from 'jquery';
 import {Contact} from "./contact.js";
+import {Navbar, Nav, Container, NavDropdown} from 'react-bootstrap';
 
-function i(){
-	new Contact().Update()
-}
 class Navigation extends Component{
 	constructor(props){
 		super(props)
+		this.contact = new Contact();
 	}
 	componentDidMount(){
-		let contact = new Contact();
+		
 	}
     render(){
 		return(
-		     <nav className="navbar d-flex">
-				<img src={koder}/>
-               <div className="content d-flex">
-                   <Link to="/"><h2 className="h1">HOME</h2></Link>
-				   <Link to="/abilities"><h2 className="h1">ABILITIES</h2></Link>
-				   <Link to="/networks"><h2 className="h1">NETWORKS</h2></Link>
-		       </div>
-			   <div className="contact" onClick={i}>
+			<Navbar bg="dark" expand="lg" className="p-2">
+				<img id="koderimg" src={koder}/>
+			<Container>
+				<Navbar.Toggle aria-controls="basic-navbar-nav" />
+				<Navbar.Collapse id="basic-navbar-nav">
+				<Nav className="me-auto d-flex">
+				    <Link className="nav-link text-light" to="/">HOME</Link>
+					<Link className="nav-link text-light" to="/abilities">ABILITIES</Link>
+					<Link className="nav-link text-light" to="/networks">NETWORKS</Link>
+				</Nav>
+				<div className="contact" onClick={this.contact.Update}>
 				   <span class="material-icons mess">forum</span>
 			   </div>
-		     </nav>
+				</Navbar.Collapse>
+			</Container>
+			</Navbar>
 		)
 	}
 }

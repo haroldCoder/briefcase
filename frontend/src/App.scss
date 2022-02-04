@@ -1,0 +1,236 @@
+@import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
+@import "../node_modules/bootstrap/scss/bootstrap";
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&display=swap');
+
+$font-family-sans-serif: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !default;
+$font-family-serif:      Georgia, "Times New Roman", Times, serif !default;
+$font-family-monospace:  Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
+$font-family-base:       $font-family-sans-serif !default;
+
+:root{
+  --bs-black: rgb(153, 153, 153);
+}
+#root{
+	background-color: $black;
+	height: auto;
+}
+.main{
+	width: 100%;
+	height: 100%;
+	padding-left: 0% !important;
+	padding-right: 0% !important;
+}
+.home{
+	margin-top: 2%;
+	margin-left: 0%;
+	width: 100%;
+}
+#koderimg{
+	width: 6%;
+	height: 9%;
+	border-radius: 100%;
+}
+nav{
+	.container{
+		width: 50%;
+		margin-left: 15%;
+	}
+}
+.collapse{
+	width: 50%;
+	justify-content: start;
+}
+.me-auto{
+	width: 75%;
+	justify-content: space-evenly;
+	margin: 0 !important;
+}
+.nav-link{
+	font-size: 35px;
+	font-family: 'Bebas Neue', cursive;
+}
+.home > .info{
+	width: 98%;
+	height: 100%;
+	background-color: #EEEEEE0F;
+	backdrop-filter: blur(6px);
+	padding-top: 5px;
+	margin-left: 1%;
+}
+.info > .block{
+	width: 50%;
+}
+.info > .block > .present{
+	height: auto;
+	margin: .5% 1% 1% 0%;
+	background-color: #ffffff60;
+	padding: 8px 8px 8px 8px;
+}
+.present > .img{
+	width: 33vh;
+	height: auto;
+	border: 3px solid #e4e4e4;
+	padding: 8px 8px 9px 8px;
+}
+.img > img{
+	width: 30vh;
+	height: 35vh;
+}
+.data{
+	width: 60%;
+}
+.data > .column > h4{
+	border: 1.5px solid #d7d9da;
+	padding: 7px 7px 7px 7px;
+}
+.info2{
+	margin-bottom: 8px !important;
+}
+.info > .responsive{
+	width: 50%;
+}
+.responsive > .col-md-4{
+	width: 100% !important;
+}
+.responsive > .col-md-4 > #word{
+	font-family: 'Staatliches', cursive;
+	font-size: 60px;
+}
+.panel > .input{
+	width: 40%;
+	height: auto;
+	background: #00000048;
+	backdrop-filter: blur(6px);
+	position: absolute;
+	top: 20%;
+	left: 30%;
+}
+.inp{
+	background: transparent !important;
+	outline: none !important;
+	color: #FFF !important;
+}
+.inp:focus{
+	background: #FFFFFF40 !important;
+}
+#log:hover{
+	background: #1212ff;
+	color: #FFF;
+	padding: 6px 6px 6px 6px;
+	border-radius: 10px;
+}
+#koder{
+	width: 34%;
+	height: 30vh;
+	border-radius: 20px;
+	border: 3px solid #0dbCfd;
+}
+.dark{
+	color: #8a8a8a;
+	border-bottom: 3px solid #00eeff;
+	font-family: fantasy;
+	padding: 5px 1.5%;
+}
+.pad{
+	padding: 0 0 !important;
+}
+@media screen and (max-width: 600px) {
+	#root{
+		overflow: auto;
+		width: 100% !important;
+	}
+	.navbar{
+		padding-left: 2%;
+		margin-bottom: 10px !important;
+	}
+	.navbar > img{
+		width: 15%;
+		height: 7.5vh !important;
+		margin: 0 !important;
+	}
+	.home{
+		width: 100%;
+		margin: 5% 0 !important;
+	}
+	.present{
+		width: 98%;
+		margin: 2% 1% !important;
+	}
+	.block{
+		width: 100% !important;
+	}
+	.present > .img{
+		display: inherit;
+		padding: 0 !important;
+		width: 40% !important;
+		position: sticky;
+		left: 30%;
+	}
+	.present > .img > img{
+		width: 100%;
+		height: 20vh;
+	}
+	.present > .data{
+		width: 98.5%;
+		margin: 4% 0 !important;
+	}
+	.content{
+	    justify-content: center;
+		width: 95% !important;
+	    border-bottom-right-radius: 200px;
+	    border-bottom-left-radius: 200px;
+	}
+	.maintitle{
+		left: 30% !important;
+	}
+	.netw{
+		height: 100vh;
+	}
+	.input{
+		left: 2% !important;
+		color: #FFF !important;
+		width: 95% !important;
+	}
+	.intro > h5{
+		color: #c7c4c4 !important;
+		font-size: 20px !important;
+	}
+	.imgi{
+		width: 40% !important;
+		height: 40% !important;
+	}
+	.profile > img{
+		border-radius: 50%;
+		width: 50px !important;
+		height: 50px !important;
+	}
+	.panelp{
+		left: 0% !important;
+		width: 100% !important;
+		position: absolute !important;
+	}
+	.mains > .m-4{
+		display: block !important;
+	} 
+	.mains > .m-4 > img{
+		position: sticky;
+		left: 40%;
+		border-radius: 100% !important;
+		width: 30% !important;
+		height: 30% !important;
+	}
+	.foot{
+		display: block !important;
+	}
+	.closes{
+		width: 55% !important;
+		height: 7vh !important;
+		margin: 15% 2% !important;
+		padding: 5px !important;
+	}
+	.delete{
+		width: 55% !important;
+		height: 7vh !important;
+		margin: 15% 2% !important;
+	}
+}

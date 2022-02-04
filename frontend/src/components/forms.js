@@ -20,17 +20,17 @@ class Forms extends Component{
 		email: '',
 		password: '',
 		data: [],
-		id: 0
+		id: 0,
 	}
 	componentDidMount(){
 	  if($(".input").length > 0)
-       this.RequireData();
-	   this.style()
+        this.RequireData();
+	    this.style()
 	}
 	componentDidUpdate(){
 		if($(".input").length > 0)
-		  this.RequireData()
-		  this.style()
+		   this.RequireData()
+		   this.style()
 	}
 	style = () =>{
 		$(".form > form > input").css("border","none");
@@ -62,7 +62,7 @@ class Forms extends Component{
 		  $(".form > form > button").eq(1).css("justify-content","center");
 	}
 	RequireData = async() =>{
-		const res = await axios('http://data-base-3.herokuapp.com/estudiantes');
+		const res = await axios('https://db-coderx.herokuapp.com/users');
 		this.setState({data: res.data});
 	}
 	Press = () =>{
@@ -128,10 +128,12 @@ class Forms extends Component{
 			}
 		}
 		if(b == 'V'){
+			$(".input").remove()
 			this.profile.UI(this.state.data[index].name,email,true);
 			this.windowLogin(this.state.data[index].name,"win bg-success d-flex","welcome ");
 		}
 		else{
+			$(".input").remove()
 			this.windowLogin(this.state.data[index].name,"win bg-danger d-flex","User no register ");
 		}
 		$(".win").css("padding","10px 10px");
@@ -179,7 +181,7 @@ class Forms extends Component{
 			})
 			$(".rpanel > h5 > span").css("color","#30CCFF");
 			$(".form").addClass("pad");
-			axios.post('https://data-base-3.herokuapp.com/estudiantes',{
+			axios.post('https://db-coderx.herokuapp.com/users',{
 				name: name,
 				email: email
 			})
@@ -244,17 +246,17 @@ class Forms extends Component{
 		)
 	}
 	responseGoogle = (res) =>{
-		let cookie = new Cookies();
+		const cookie = new Cookies()
 		if(this.state.intro == "Register"){
-		  this.succesR(res.profileObj.name,res.profileObj.email);
 		  cookie.set("cover",res.profileObj.imageUrl,{path: '/'});
+		  this.succesR(res.profileObj.name,res.profileObj.email);
 		}
 		else{
 			cookie.set("name",res.profileObj.name,{path: '/'});
 			cookie.set("email",res.profileObj.email,{path: '/'});
 			cookie.set("cover",res.profileObj.imageUrl,{path: '/'});
 			this.succesL(res.profileObj.email,res.profileObj.password);
-			
+						
 		}
 	}
 }

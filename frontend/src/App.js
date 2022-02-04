@@ -5,9 +5,9 @@ import Home from './components/home.js';
 import Abili from './components/abilities.js';
 import Net from './components/networks.js';
 import $ from 'jquery';
-import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {BrowserRouter as Router,Route} from 'react-router-dom';
+import media from './media.js';
 
 class App extends Component{
 	constructor(props){
@@ -16,8 +16,10 @@ class App extends Component{
 	}
 	componentDidMount(){
 		this.Update();
+		media();
 	}
 	componentWillUpdate(){
+		media()
 		this.Update();
 	}
 	render(){
@@ -25,7 +27,7 @@ class App extends Component{
 			<Router>
 			<div className="main container-fluid">
 			  <Nav/>
-			  <h2 className="maintitle">Coderx developers</h2>
+			  <h2 className="maintitle card-title">Coderx developers</h2>
 			  <div className="panel">
 				  <Route path="/" exact component={Home}/>
 				  <Route path="/abilities" exact component={Abili}/>
@@ -57,12 +59,13 @@ class App extends Component{
 	  $(".maintitle").css("font-size","20px");
 	  $(".maintitle").css("display","inline");
 	  $(".content > h2").css("cursor","pointer");
-	  $(".contact > .mess").css("font-size","50px");
-	  $(".contact > .mess").css("color","#202020");
+	  $(".contact > .mess").css("font-size","60px");
+	  $(".contact > .mess").css("color","#FFF");
+	  $(".contact > .mess").css("cursor","pointer");
 	  $(".contact > .mess").mouseover(()=>{
 		  $(".contact > .mess").css("color","#50CEFF");
 	  }).mouseout(()=>{
-		$(".contact > .mess").css("color","#202020");
+		$(".contact > .mess").css("color","#FFF");
 	  })
 	  a.forEach((e,index)=>{
 		  $(e).on("click",function(ev){
